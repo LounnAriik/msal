@@ -13,7 +13,7 @@ const store = createStore({
           cacheLocation: 'localStorage',
         },
       },
-      accessToken: ''
+      accessToken:""
     };
   },
   mutations :{

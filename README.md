@@ -1,4 +1,4 @@
-# test
+# vue-aad
 
 ## Project setup
 ```

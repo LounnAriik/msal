@@ -1,3 +1,32 @@
+<template>
+  <div class="navbar-menu">
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a :href="github" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+          <a :href="twitter" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-twitter fa-2x" aria-hidden="true"></i>
+          </a>
+          <a
+            v-if="!account"
+            @click="SignIn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fas fa-sign-in-alt fa-2x" aria-hidden="false"></i>
+          </a>
+          <a v-else @click="SignOut" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-sign-out-alt fa-2x" aria-hidden="false"></i>
+          </a>
+          <div v-if="account">{{ account.name }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
 <script>
 import { PublicClientApplication } from '@azure/msal-browser';
 
